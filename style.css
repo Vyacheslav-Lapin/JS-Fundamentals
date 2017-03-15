@@ -1,0 +1,25 @@
+span#first {
+    font-size: 24pt;
+    font-weight: bold;
+    color: rgba(155, 200, 100, 0.5);
+}
+
+.second {
+    font-size: 24pt;
+    color: #8a2be2;
+    font-style: italic;
+}
+
+.third {
+    font-size: 50pt;
+    color: chartreuse;
+}
+
+a.linka {
+    font-size: 20pt;
+    font-style: italic;
+}
+
+a.linka:hover {
+    font-weight: bold;
+}
