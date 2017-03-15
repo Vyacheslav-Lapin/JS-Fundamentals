@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Vyacheslav-Lapin/JS-Fundamentals/issues"
   },
-  "homepage": "https://github.com/Vyacheslav-Lapin/JS-Fundamentals#readme"
+  "homepage": "https://github.com/Vyacheslav-Lapin/JS-Fundamentals#readme",
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "require": "^2.4.20"
+  }
 }
