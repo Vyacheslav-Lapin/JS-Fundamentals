@@ -1,9 +1,13 @@
 /*--bg:#424242;*/
 
-img, form, a {
+img, form, a, input {
     margin: 0;
     padding: 0;
     border: 0;
+}
+
+img {
+    display: block;
 }
 
 body {
@@ -13,6 +17,7 @@ body {
 body > header {
     background-color: #3f51b5;
     min-height: 60px;
+    vertical-align: middle;
 }
 
 .burger-menu-icon {
@@ -25,4 +30,25 @@ body > header {
     float: left;
     padding: 13px 26px 10px 17px;
     background-color: #283593;
+}
+
+a.user-icon {
+    float: right;
+}
+
+img.user-icon {
+    overflow: hidden;
+    background-color: #f8f8f5;
+    border-radius: 50%;
+    margin: 12px 15px 11px;
+}
+
+form.main-search {
+    float: right;
+    margin: 14px 0;
+}
+
+form.main-search > input {
+    width: 192px;
+
 }
