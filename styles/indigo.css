@@ -1,4 +1,6 @@
-/*--bg:#424242;*/
+:root {
+    --bg1:#424242;
+}
 
 img, form, a, input {
     margin: 0;
@@ -23,7 +25,7 @@ body > header {
 .burger-menu-icon {
     float: left;
     padding: 22px 18px;
-    background-color: #424242;
+    background-color: var(--bg1);
 }
 
 .logo {
@@ -49,6 +51,34 @@ form.main-search {
 }
 
 form.main-search > input {
+    display: block;
     width: 192px;
+    height: 32px;
+    border-radius: 16px;
+    background-color: #283593;
+}
 
+/*@font-face {*/
+    /*font-family: "Font Awesome";*/
+    /*src: url("");*/
+.fa.fa-search {
+    position: relative;
+    left: 5px;
+    top: 20px;
+}
+.fa.fa-search::before {
+    font-family: 'FontAwesome';
+    color: #5160b9;
+    position: absolute;
+    content: "\f002";
+}
+
+/*}*/
+form.main-search > input {
+    /*content: "";*/
+    /*content: "&#xf002;";*/
+    /*noinspection CssNoGenericFontName*/
+    font-family: "FontAwesome";
+    font-size: 12pt;
+    color: #5160b9;
 }
