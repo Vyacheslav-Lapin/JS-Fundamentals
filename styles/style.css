@@ -4,6 +4,15 @@ span#first {
     color: rgba(155, 200, 100, 0.5);
 }
 
+a > span > small {
+/**/
+
+}
+
+a > span > small > p {
+
+}
+
 .second {
     font-size: 24pt;
     color: #8a2be2;
