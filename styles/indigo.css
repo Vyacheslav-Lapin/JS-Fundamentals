@@ -1,5 +1,6 @@
 :root {
     --bg1:#424242;
+    --search-color:#5160b9
 }
 
 img, form, a, input {
@@ -67,18 +68,16 @@ form.main-search > input {
     top: 20px;
 }
 .fa.fa-search::before {
+    /*noinspection CssNoGenericFontName*/
     font-family: 'FontAwesome';
-    color: #5160b9;
+    color: var(--search-color);
     position: absolute;
     content: "\f002";
 }
 
 /*}*/
 form.main-search > input {
-    /*content: "";*/
-    /*content: "&#xf002;";*/
     /*noinspection CssNoGenericFontName*/
-    font-family: "FontAwesome";
     font-size: 12pt;
-    color: #5160b9;
+    color: var(--search-color);
 }
