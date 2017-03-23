@@ -1,6 +1,6 @@
 :root {
-    --bg1:#424242;
-    --search-color:#5160b9
+    --bg1: #424242;
+    --search-color: #5c6bc0
 }
 
 img, form, a, input {
@@ -51,33 +51,51 @@ form.main-search {
     margin: 14px 0;
 }
 
+/* Download font */
+@font-face {
+    font-family: FontAwesome;
+
+    src: url('http://maxcdn.bootstrapcdn.com/font-awesome/latest/fonts/fontawesome-webfont.eot?v=4.7.0');
+
+    src: url('http://maxcdn.bootstrapcdn.com/font-awesome/latest/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),
+    url('http://maxcdn.bootstrapcdn.com/font-awesome/latest/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),
+    url('http://maxcdn.bootstrapcdn.com/font-awesome/latest/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),
+    url('http://maxcdn.bootstrapcdn.com/font-awesome/latest/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),
+    url('http://maxcdn.bootstrapcdn.com/font-awesome/latest/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+
+    font-weight: normal;
+
+    font-style: normal;
+}
+
+form.main-search::before {
+    /*noinspection CssNoGenericFontName*/
+    font-family: FontAwesome;
+    content: '\f002';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    color: var(--search-color);
+
+    position: absolute;
+    display: block;
+    margin: 8px 0 0 19px;
+}
+
 form.main-search > input {
+    padding-left: 42px;
+    font-family: 'Source Sans Pro', serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #f8f8f5;
+
     display: block;
     width: 192px;
     height: 32px;
     border-radius: 16px;
     background-color: #283593;
 }
-
-/*@font-face {*/
-    /*font-family: "Font Awesome";*/
-    /*src: url("");*/
-.fa.fa-search {
-    position: relative;
-    left: 5px;
-    top: 20px;
-}
-.fa.fa-search::before {
-    /*noinspection CssNoGenericFontName*/
-    font-family: 'FontAwesome';
-    color: var(--search-color);
-    position: absolute;
-    content: "\f002";
-}
-
-/*}*/
-form.main-search > input {
-    /*noinspection CssNoGenericFontName*/
-    font-size: 12pt;
-    color: var(--search-color);
-}
+form.main-search > input::-webkit-input-placeholder { color: var(--search-color); }
+form.main-search > input::-moz-placeholder { color: var(--search-color); }
+form.main-search > input:-ms-input-placeholder { color: var(--search-color); }
