@@ -9,6 +9,10 @@
     /*}*/
 }
 
+a {
+    text-decoration: none;
+}
+
 img, form, a, input {
     margin: 0;
     padding: 0;
