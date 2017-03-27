@@ -1,0 +1,42 @@
+section.toolbox {
+    background-color: #ededed;
+    margin-left: 214px;
+    font-size: 0;
+}
+
+section.toolbox ul {
+    list-style-type: none;
+    border-left: 1px solid #d1d0d0;
+    margin: 0 0 0 40px;
+    padding: 0;
+}
+
+section.toolbox ul:first-child {
+    border-left: 0;
+    margin-left: 0;
+}
+
+section.toolbox ul,
+section.toolbox ul li {
+    display: inline-block;
+}
+
+section.toolbox ul li {
+    border-right: 1px solid #d1d0d0;
+}
+
+section.toolbox a {
+    font-family: FontAwesome;
+    font-size: 21px;
+    color: #747474;
+    display: inline-block;
+    width: 42px;
+    line-height: 39px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+section.toolbox a:hover {
+    color: #ededed;
+    background-color: #747474;
+}

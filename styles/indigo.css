@@ -1,5 +1,6 @@
 @import url("/styles/top.css");
-@import url("/styles/main.css");
+@import url("/styles/nav.css");
+@import url("/styles/main-section.css");
 
 :root {
     --search-placeholder-color: #5c6bc0;

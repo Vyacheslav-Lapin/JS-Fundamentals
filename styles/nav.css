@@ -2,6 +2,7 @@
 
 nav {
     width: 214px;
+    float: left;
     height: 100%;
     background-color: #404040;
     padding-top: 3px;
@@ -65,6 +66,10 @@ nav > ul > li.active a {
 
 li.active.page > a {
     color: #fff;
+}
+
+nav ul ul ul ul {
+    -webkit-padding-start: 19px;
 }
 
 nav > ul > li.active > a:after,
