@@ -5,11 +5,15 @@ nav {
     height: 100%;
     background-color: #404040;
     padding-top: 3px;
+    position: relative;
 }
 
 nav > ul {
-    list-style-type: none;
     padding-left: 0;
+}
+
+nav ul {
+    list-style-type: none;
 }
 
 /*noinspection CssNoGenericFontName*/
@@ -40,6 +44,7 @@ nav > ul > li {
     border-bottom: 1px solid #474747;
     line-height: 47px;
 }
+nav > ul > li > ul { text-transform: none; }
 
 nav > ul > li > a {
     padding-left: 16px;
@@ -54,11 +59,35 @@ nav > ul li > a {
     display: block;
 }
 
-nav > ul > li.active > a:after {
-    content: "^";
+nav > ul > li.active a {
+    color: #656565;
+}
+
+li.active.page > a {
     color: #fff;
+}
+
+nav > ul > li.active > a:after,
+nav > ul > li.active > ul > li > ul > li.active > a:after {
+    content: "\f077";
+    color: #fff;
+    font-size: x-small;
+    font-family: FontAwesome, serif;
     position: relative;
-    top: 3px;
+    top: -1px;
     right: 19px;
     float: right;
 }
+
+li.page > a:after {
+    font-size: x-small;
+    font-family: FontAwesome;
+    position: absolute;
+    left: 183px;
+}
+
+li.page.circle > a:after { content: "\f1db"; }
+li.page.key > a:after { content: "\f084"; }
+li.page.ok > a:after { content: "\f00c"; }
+li.page.x > a:after { content: "\f00d"; }
+li.page.box > a:after { content: "\f187"; }
