@@ -1,6 +1,7 @@
 @import url("/styles/top.css");
 @import url("/styles/nav.css");
 @import url("/styles/toolbox.css");
+@import url("/styles/tabs.css");
 @import url("/styles/content.css");
 
 :root {

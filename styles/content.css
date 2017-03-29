@@ -1,10 +1,31 @@
-section.content > section,
-section.content > div,
-section.content > div.default:target + section {
-    display: none;
+section.content > section {
+    font-size: 14px;
+    padding-top: 25px;
 }
 
-section.content > div:target + section,
-section.content > div.default + section {
-    display: block;
+section.content > section > form > input {
+    padding-left: 29px;
+    width: 156px;
+    height: 24px;
+    border-radius: 11px;
+    border: 1px solid #bdbdbd;
+    background-color: #fff;
 }
+
+section.content > section > form::before {
+    /*noinspection CssNoGenericFontName*/
+    font-family: FontAwesome;
+    content: '\f002';
+    color: #b6b6b6;
+
+    font-size: 12px;
+    line-height: 12px;
+
+    position: absolute;
+    display: block;
+    margin: 6px 0 0 10px;
+}
+
+section.content > section > form > input::-webkit-input-placeholder { font-family: "Source Sans Pro"; }
+section.content > section > form > input::-moz-placeholder { font-family: "Source Sans Pro"; }
+section.content > section > form > input:-ms-input-placeholder { font-family: "Source Sans Pro"; }

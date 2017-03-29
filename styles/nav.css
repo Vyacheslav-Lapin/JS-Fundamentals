@@ -97,3 +97,7 @@ li.page.key > a:after { content: "\f084"; }
 li.page.ok > a:after { content: "\f00c"; }
 li.page.x > a:after { content: "\f00d"; }
 li.page.box > a:after { content: "\f187"; }
+
+main > section {
+    margin-left: 214px;
+}

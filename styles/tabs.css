@@ -1,0 +1,74 @@
+section.content {
+    font-size: 0;
+}
+
+section.content > div.predefault + * + * + * + * + section {
+    display: block;
+}
+
+section.content > section,
+section.content > div {
+    display: none;
+}
+
+section.content > div:target + * + * + * + section {
+    display: block;
+}
+
+section.content > div.predefault:target + * + * + * + section {
+    display: block;
+}
+
+section.content > div.predefault:target + * + * + * + * + section {
+    display: none;
+}
+
+section.content > ul > li {
+    display: inline-block;
+
+}
+
+section.content > ul > li:first-child {
+    padding-left: 0;
+}
+
+/*section.content > div.predefault + div + ul > li > a.default*/
+
+section.content > a:first-of-type { padding-left: 20px; }
+
+section.content > a {
+    display: inline-block;
+    border-right: 1px solid #e0e0e0;
+    padding: 19px 13px 18px 31px;
+    background-color: #fff;
+
+    font-family: Oswald, serif;
+    color: #666;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+/*noinspection CssNoGenericFontName*/
+section.content > a:after {
+    content: "\f00d";
+    font-family: FontAwesome;
+    color: #666;
+    display: inline-block;
+    margin-left: 30px;
+}
+
+section.content > div:target + * + a {
+    color: #3f51b5;
+    position: relative;
+    top: 1px;
+    padding: 19px 13px 18px 31px;
+}
+
+section.content > section {
+    border-top: 1px solid #e0e0e0;
+    padding-left: 20px;
+}
+
+ /*+ a.default {*/
+    /*top: 0;*/
+/*}*/
