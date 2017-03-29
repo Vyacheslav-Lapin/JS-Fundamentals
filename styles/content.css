@@ -1,0 +1,10 @@
+section.content > section,
+section.content > div,
+section.content > div:target + section.default {
+    display: none;
+}
+
+section.content > div:target + section,
+section.content > section.default {
+    display: block;
+}
