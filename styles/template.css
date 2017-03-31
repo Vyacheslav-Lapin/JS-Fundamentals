@@ -1,5 +1,6 @@
 section.content > section > article {
     border: 1px solid #b6b6b6;
+    margin: 16px 10px 0 0;
     float: left;
     width: 380px;
     height: 418px;
@@ -15,10 +16,82 @@ section.content > section > article > h1 {
     font-weight: 400;
     line-height: 11px;
     text-transform: uppercase;
-    border-bottom: 1px solid #e0e0e0;
 }
 
 section.content > section > article > ul {
-    overflow: scroll;
+    overflow-y: scroll;
     height: 371px;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+section.content > section > article > ul::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+section.content > section > article > ul::-webkit-scrollbar:vertical {
+    width: 6px;
+}
+
+section.content > section > article > ul::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+section.content > section > article > ul::-webkit-scrollbar-track {
+    background-color: #ccc;
+    border-radius: 8px;
+}
+
+section.content > section > article > ul > li:first-child {
+    position: relative;
+}
+
+section.content > section > article > ul > li {
+    border-top: 1px solid #e0e0e0;
+}
+
+section.content > section > article > ul > li > form {
+    padding: 15px 16px 15px 20px;
+}
+
+section.content > section > article > ul > li > form > input {
+    padding-left: 33px;
+    width: 100%;
+    height: 25px;
+    border: 1px solid #bdbdbd;
+}
+
+section.content > section > article > ul > li > form::before {
+    /*noinspection CssNoGenericFontName*/
+    font-family: FontAwesome;
+    content: '\f002';
+    color: #b6b6b6;
+
+    font-size: 12px;
+    line-height: 12px;
+
+    position: absolute;
+    display: block;
+    margin: 6px 0 0 10px;
+}
+
+section.content > section > article > ul > li > form > input::-webkit-input-placeholder { font-family: "Source Sans Pro"; }
+section.content > section > article > ul > li > form > input::-moz-placeholder { font-family: "Source Sans Pro"; }
+section.content > section > article > ul > li > form > input:-ms-input-placeholder { font-family: "Source Sans Pro"; }
+
+section.content > section > article > ul > li > h2 {
+    margin: 15px 0 0 19px;
+    color: #616161;
+    font-family: "Source Sans Pro", serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+section.content > section > article > ul > li > small {
+    color: #616161;
+    font-family: "Source Sans Pro", serif;
+    font-size: 14px;
+    line-height: 36px;
+    margin: 10px 0 12px 19px;
 }
