@@ -4,11 +4,11 @@ section.content > section > article {
     float: left;
     width: 380px;
     height: 418px;
+    padding-right: 6px;
 }
 
-section.content > section > article > h1 {
-    width: 86px;
-    height: 14px;
+section.content > section > article > h1,
+section.content > section > article > header > h1 {
     margin: 17px 0 16px 19px;
     color: #616161;
     font-family: Oswald, serif;
@@ -18,11 +18,39 @@ section.content > section > article > h1 {
     text-transform: uppercase;
 }
 
+section.content > section > article > header > h1 {
+    display: inline-block;
+}
+
+section.content > section > article > header > button {
+    float: right;
+    border: 0;
+    margin: 12px 17px;
+    width: 123px;
+    height: 24px;
+    background-color: #f2f2f2;
+
+    color: #616161;
+    font-family: Oswald, serif;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+section.content > section > article > header > button:before {
+    content: "+";
+    display: block;
+    float: left;
+    margin-right: 8px;
+}
+
 section.content > section > article > ul {
     overflow-y: scroll;
     height: 371px;
     list-style-type: none;
     padding-left: 0;
+    width: 100%;
+    margin: 0;
 }
 
 section.content > section > article > ul::-webkit-scrollbar {
@@ -80,7 +108,8 @@ section.content > section > article > ul > li > form > input::-webkit-input-plac
 section.content > section > article > ul > li > form > input::-moz-placeholder { font-family: "Source Sans Pro"; }
 section.content > section > article > ul > li > form > input:-ms-input-placeholder { font-family: "Source Sans Pro"; }
 
-section.content > section > article > ul > li > h2 {
+section.content > section > article > ul > li > h2,
+section.content > section > article > ul > li > ul > li > h2 {
     margin: 15px 0 0 19px;
     color: #616161;
     font-family: "Source Sans Pro", serif;
@@ -88,10 +117,74 @@ section.content > section > article > ul > li > h2 {
     font-weight: 600;
 }
 
+section.content > section > article > ul > li > ul > li > small,
 section.content > section > article > ul > li > small {
     color: #616161;
     font-family: "Source Sans Pro", serif;
     font-size: 14px;
     line-height: 36px;
     margin: 10px 0 12px 19px;
+}
+
+section.content > section > article.tree > ul > li:before {
+    display: inline-block;
+    position: absolute;
+    right: 25px;
+    top: 11px;
+
+    /*noinspection CssNoGenericFontName*/
+    font-family: FontAwesome;
+    content: "";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 11px;
+}
+
+section.content > section > article.tree > ul > li {
+    position: relative;
+    background-color: #fafafa;
+}
+
+section.content > section > article > ul > li > a {
+    display: inline-block;
+    padding: 10px 0 11px 18px;
+    color: #616161;
+    font-family: "Source Sans Pro", serif;
+    font-size: 12px;
+    font-weight: 600;
+    /*line-height: 15px;*/
+    text-transform: uppercase;
+}
+
+section.content > section > article > ul > li > a:before {
+    /*noinspection CssNoGenericFontName*/
+    font-family: FontAwesome;
+    content: "\f077";
+    display: inline-block;
+    padding-right: 12px;
+    color: #616161;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+section.content > section > article > ul > li > a:after {
+    /*noinspection CssNoGenericFontName*/
+    font-family: FontAwesome;
+    content: "";
+    color: #616161;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 11px;
+    text-transform: uppercase;
+    padding-left: 8px;
+}
+
+section.content > section > article > ul > li > ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+section.content > section > article.tree > ul > li > ul > li {
+    background-color: #fff;
+    border-top: 1px solid #e0e0e0;
 }
