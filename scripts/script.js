@@ -1,7 +1,24 @@
 "use strict";
 
-document.write("<span class=\"third\">123</span>");
+// with ({x:5}) {
+//     console.log(x);
+// }
 
-var x = 1;
+// function def(a) {
+//     var b = 10;
+//     console.log(window.b);
+// }
+// def({});
 
-$('.first').fadeOut(5000);
+function def() {
+    console.log(this === window);
+    console.log(typeof this);
+}
+
+// var global = this;
+
+// def.apply(this); // true
+// def.apply(window); // true
+
+def.apply(5); // "object"
+// def(); // false

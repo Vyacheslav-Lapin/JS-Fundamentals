@@ -26,6 +26,14 @@ section.content > section > form::before {
     margin: 6px 0 0 10px;
 }
 
-section.content > section > form > input::-webkit-input-placeholder { font-family: "Source Sans Pro"; }
-section.content > section > form > input::-moz-placeholder { font-family: "Source Sans Pro"; }
-section.content > section > form > input:-ms-input-placeholder { font-family: "Source Sans Pro"; }
+section.content > section > form > input::-webkit-input-placeholder {
+    font-family: "Source Sans Pro", serif;
+}
+
+section.content > section > form > input::-moz-placeholder {
+    font-family: "Source Sans Pro", serif;
+}
+
+section.content > section > form > input:-ms-input-placeholder {
+    font-family: "Source Sans Pro", serif;
+}

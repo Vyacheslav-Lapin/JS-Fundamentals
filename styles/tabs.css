@@ -1,8 +1,9 @@
 section.content {
     font-size: 0;
+    position: relative;
 }
 
-section.content > div.predefault + * + * + * + * + section {
+section.content > div.pre-default + * + * + * + * + section {
     display: block;
 }
 
@@ -15,11 +16,11 @@ section.content > div:target + * + * + * + section {
     display: block;
 }
 
-section.content > div.predefault:target + * + * + * + section {
+section.content > div.pre-default:target + * + * + * + section {
     display: block;
 }
 
-section.content > div.predefault:target + * + * + * + * + section {
+section.content > div.pre-default:target + * + * + * + * + section {
     display: none;
 }
 
@@ -31,8 +32,6 @@ section.content > ul > li {
 section.content > ul > li:first-child {
     padding-left: 0;
 }
-
-/*section.content > div.predefault + div + ul > li > a.default*/
 
 section.content > a:first-of-type { padding-left: 20px; }
 
@@ -57,18 +56,19 @@ section.content > a:after {
     margin-left: 30px;
 }
 
+section.content > div.pre-default + * + * + a,
 section.content > div:target + * + a {
     color: #3f51b5;
+    position: absolute;
+    padding-bottom: 19px;
+}
+
+section.content > div.pre-default:target + * + * + a {
     position: relative;
-    top: 1px;
-    padding: 19px 13px 18px 31px;
+    padding-bottom: 18px;
 }
 
 section.content > section {
     border-top: 1px solid #e0e0e0;
     padding-left: 20px;
 }
-
- /*+ a.default {*/
-    /*top: 0;*/
-/*}*/
