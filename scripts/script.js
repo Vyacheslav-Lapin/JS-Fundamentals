@@ -43,35 +43,35 @@
 // const b = new B(1, 2);
 // console.log(b._super.constructor.name);
 
-var x = {};
-
-(function () {
-
-    var _y = 55;
-
-    Object.defineProperty(x, 'y', {
-        // value: 55,
-        // writable: true,
-        // enumerable: true
-        // configurable: true
-        // get: function () {
-        //     return _y;
-        // },
-        set: function (y) {
-            _y = y;
-        }
-    });
-
-    x.getY = function() {
-        return _y;
-    }
-})();
-
-// console.log(x.y);
-x.y = 56;
-console.log(x.getY());
-console.log('y' in x);
-console.log(Object.getOwnPropertyDescriptor(x, 'y'));
+// var x = {};
+//
+// (function () {
+//
+//     var _y = 55;
+//
+//     Object.defineProperty(x, 'y', {
+//         // value: 55,
+//         // writable: true,
+//         // enumerable: true
+//         // configurable: true
+//         // get: function () {
+//         //     return _y;
+//         // },
+//         set: function (y) {
+//             _y = y;
+//         }
+//     });
+//
+//     x.getY = function() {
+//         return _y;
+//     }
+// })();
+//
+// // console.log(x.y);
+// x.y = 56;
+// console.log(x.getY());
+// console.log('y' in x);
+// console.log(Object.getOwnPropertyDescriptor(x, 'y'));
 
 // function writeToProp(object, prop, value) {
 //     var ownPropertyDescriptor = Object.getOwnPropertyDescriptor(object, prop);
@@ -87,3 +87,13 @@ console.log(Object.getOwnPropertyDescriptor(x, 'y'));
 // writeToProp(x, 'y', 56);
 // console.log("x.y = " + x.y);
 // console.log(x);
+
+var s = "var x = 5; console.log(x);";
+var f = eval;
+// eval = function () {
+//   console.log("123");
+// };
+
+console.log(Object.getOwnPropertyDescriptor(window, 'eval'));
+
+f(s);
