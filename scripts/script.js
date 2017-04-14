@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 
 // with ({x:5}) {
 //     console.log(x);
@@ -88,12 +88,33 @@
 // console.log("x.y = " + x.y);
 // console.log(x);
 
-var s = "var x = 5; console.log(x);";
-var f = eval;
-// eval = function () {
-//   console.log("123");
-// };
+// var s = "var x = 5; console.log(x);";
+// var f = eval;
+// // eval = function () {
+// //   console.log("123");
+// // };
+//
+// console.log(Object.getOwnPropertyDescriptor(window, 'eval'));
+//
+// f(s);
 
-console.log(Object.getOwnPropertyDescriptor(window, 'eval'));
+// function f(x,y,z) {
+//     console.log(x,y,z);
+//     arguments[0] = 5;
+//     arguments[1] = 9;
+//     arguments[2] = 1;
+//     console.log(x,y,z);
+// }
+// f(1,2,3);
 
-f(s);
+function f() {
+    var x1 = {};
+    with (x1) {
+        var x = 10;
+        console.log(x);
+        console.log(delete x);
+        console.log(delete x1.x);
+        console.log(x);
+    }
+}
+f();
