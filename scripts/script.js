@@ -1,5 +1,6 @@
-// "use strict";
+"use strict";
 
+//
 // with ({x:5}) {
 //     console.log(x);
 // }
@@ -107,14 +108,50 @@
 // }
 // f(1,2,3);
 
-function f() {
-    var x1 = {};
-    with (x1) {
-        var x = 10;
-        console.log(x);
-        console.log(delete x);
-        console.log(delete x1.x);
-        console.log(x);
+// function f() {
+//     var x1 = {};
+//     with (x1) {
+//         var x = 10;
+//         console.log(x);
+//         console.log(delete x);
+//         console.log(delete x1.x);
+//         console.log(x);
+//     }
+// }
+// f();
+
+// function f(x,x,x) {
+//     console.log(x);
+//     console.log(arguments);
+//     arguments[2] = 6;
+//     console.log(arguments);
+//     console.log(x);
+// }
+// f(1,2,3);
+
+Object.defineProperty(Function.prototype, 'remember', {
+    value: function () {
+        return eval(this + ";" + this.name);
     }
+});
+
+function factorial(x) {
+    return x === 1 ? 1 : x + factorial(--x);
 }
-f();
+
+console.log(factorial(3) === 6 ?
+    'Функция знает сама о себе.' : 'Функция НЕ знает сама о себе.');
+
+var factorial1 = factorial;
+var factorial2 = factorial.remember();
+
+factorial = 5;
+
+try {
+    if (factorial1(3) === 6)
+        console.log('Функция factorial1 всё ещё помнит сама себя!');
+} catch (e) {
+    console.log('Функция factorial1 забыла сама себя...', 'Да'); //Да
+}
+
+console.log('Функция factorial2 всё ещё помнит сама себя!', factorial2(3) === 6 ? 'Да' : 'Нет'); //Да
