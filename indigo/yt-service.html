@@ -12,12 +12,38 @@
 
                 var youTubeUrl = evt.target.youTubeUrl.value;
 
-                var endTime = evt.target.endTime.value;
-
                 youTubeUrl = youTubeUrl.replace('youtu.be', 'www.youtube.com/embed');
-                /[?&]t=((\d+h)?(\d+m)?(\d+s)?)/i.test(youTubeUrl);
-                var time = RegExp.$1;
 
+                var regExp = /([?&])t=(\d+h)?(\d+m)?(\d+s)?/i;
+                regExp.test(youTubeUrl);
+                var startTime = getTime();
+                youTubeUrl = youTubeUrl.replace(regExp, '$1start=' + startTime);
+
+                var endTime = getEndTime(evt.target.endTime.value.split(':'));
+                if (endTime > startTime)
+                    youTubeUrl += '&end=' + endTime;
+
+                prompt('Скопируйте текст, нажав Ctrl+C', youTubeUrl + '&autoplay=1');
+
+                function getEndTime(endTime) {
+                    var i = 0;
+                    var result = 0;
+                    //noinspection FallThroughInSwitchStatementJS
+                    switch (endTime.length) {
+                        case 3: result += (parseInt(endTime[i++]) || 0) * 3600;
+                        case 2: result += (parseInt(endTime[i++]) || 0) * 60;
+                        case 1: result += (parseInt(endTime[i]) || 0);
+                    }
+                    return result;
+                }
+
+                function getTime() {
+                    var hours = parseInt(RegExp.$2) || 0;
+                    var minutes = parseInt(RegExp.$3) || 0;
+                    var seconds = parseInt(RegExp.$4) || 0;
+
+                    return hours * 3600 + minutes * 60 + seconds;
+                }
             });
         });
     </script>
@@ -26,8 +52,8 @@
 <body>
 
 <form>
-    <input name="youTubeUrl" placeholder="YouTUBE URL" autofocus="autofocus" size="40"/>
-    <input name="endTime" placeholder="end time in dd:dd format" pattern="(\d:)?\d+:[0-5]\d"/><br/>
+    <input name="youTubeUrl" placeholder="YouTUBE URL" autofocus="autofocus" size="40"/><br/>
+    <input name="endTime" placeholder="end time in dd:dd format" pattern="(\d:)?(\d+:)?[0-5]\d"/><br/>
 
     <input type="submit"/>
 </form>

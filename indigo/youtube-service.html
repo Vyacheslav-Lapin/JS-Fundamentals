@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YouTUBE - service</title>
+    <script>
+        'use strict';
+
+        addEventListener('DOMContentLoaded', function () {
+            document.forms[0].addEventListener('submit', function (evt) {
+                evt.preventDefault();
+
+                prompt('Строка для копирования:', toYouTubeCutURL(
+                    evt.target.link.value,
+                    evt.target.start.value,
+                    evt.target.end.value));
+            }, true);
+        });
+
+        function toYouTubeCutURL(link, start, end) {
+            return link.replace('watch?v=', 'embed/') +
+                '?start=' + getTime(start) +
+                '&end=' + getTime(end) +
+                '&autoplay=1';
+        }
+
+        function getTime(time) {
+            time = time.split(':', 2);
+            return parseInt(time[0]) * 60 + parseInt(time[1]);
+        }
+    </script>
+</head>
+<body>
+
+<form>
+    <input name="link" autofocus="autofocus" placeholder="YuoTUBE link"/>
+    <input name="start" placeholder="start time (dd:dd)" pattern="\d*\d:\d\d"/>
+    <input name="end" placeholder="end time (dd:dd)" pattern="\d*\d:\d\d"/><br/>
+
+    <input type="submit" value="calculate"/>
+</form>
+
+</body>
+</html>
