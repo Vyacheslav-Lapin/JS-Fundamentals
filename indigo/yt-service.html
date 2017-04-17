@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YouTUBE-service</title>
+    <script>
+        // https://www.youtube.com/embed/k0jC50TcdR0?start=302&end=305&autoplay=1
+        // https://youtu.be/k0jC50TcdR0?t=1h5m2s
+        addEventListener('DOMContentLoaded', function () {
+            document.forms[0].addEventListener('submit', function (evt) {
+                evt.preventDefault();
+
+                var youTubeUrl = evt.target.youTubeUrl.value;
+
+                var endTime = evt.target.endTime.value;
+
+                youTubeUrl = youTubeUrl.replace('youtu.be', 'www.youtube.com/embed');
+                /[?&]t=((\d+h)?(\d+m)?(\d+s)?)/i.test(youTubeUrl);
+                var time = RegExp.$1;
+
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+<form>
+    <input name="youTubeUrl" placeholder="YouTUBE URL" autofocus="autofocus" size="40"/>
+    <input name="endTime" placeholder="end time in dd:dd format" pattern="(\d:)?\d+:[0-5]\d"/><br/>
+
+    <input type="submit"/>
+</form>
+
+</body>
+</html>
