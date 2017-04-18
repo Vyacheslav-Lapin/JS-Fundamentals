@@ -46,6 +46,14 @@
                 }
             });
         });
+
+        var obj = Object.create(null, {
+            'map': {
+                value: 'kjbafdgdfag',
+                configurable: true,
+            }
+        });
+        console.log(obj instanceof Object); //false
     </script>
 
 </head>
