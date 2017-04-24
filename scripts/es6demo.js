@@ -1,20 +1,25 @@
 "use strict";
 
-class MyClass {
-    constructor(x, y, z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
-    }
+const MyClass = function (HIDDEN) {
 
-    m1() {
-        console.log(this.x + this.y + this.z);
-    }
+    return class {
+        constructor(x, y, z) {
+            this.x = x;
+            this.y = y;
+            this.z = z;
 
-    static m2() {
-        console.log(this.name);
-    }
-}
+            this[HIDDEN] = x + y + z;
+        }
+
+        m1() {
+            console.log(this[HIDDEN]);
+        }
+
+        static m2() {
+            console.log(this.name);
+        }
+    };
+}(Symbol('hidden'));
 
 // function MyClass(x, y, z) {
 //     this.x = x;
@@ -30,8 +35,10 @@ class MyClass {
 //     console.log(this.name);
 // };
 
-var x = new MyClass(1, 2, 3);
-x.m1();
+{
+    const x = new MyClass(1, 2, 3);
+    x.m1();
+    console.log(x['hidden']);
+}
 
-x.constructor.m2();
-// MyClass.m2();
+
