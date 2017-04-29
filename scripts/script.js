@@ -129,21 +129,20 @@
 // }
 // f(1,2,3);
 
+
 Object.defineProperty(Function.prototype, 'remember', {
-    value: function () {
-        return eval(this + ";" + this.name);
-    }
+    value: function () { return eval(`${this};${this.name}`); }
 });
 
 function factorial(x) {
-    return x === 1 ? 1 : x + factorial(--x);
+    return x === 1 ? 1 : x + factorial(x - 1);
 }
 
 console.log(factorial(3) === 6 ?
     'Функция знает сама о себе.' : 'Функция НЕ знает сама о себе.');
 
-var factorial1 = factorial;
-var factorial2 = factorial.remember();
+const factorial1 = factorial;
+const factorial2 = factorial.remember();
 
 factorial = 5;
 

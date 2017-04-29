@@ -6,8 +6,8 @@
     <script>
         'use strict';
 
-        addEventListener('DOMContentLoaded', function () {
-            document.forms[0].addEventListener('submit', function (evt) {
+        addEventListener('DOMContentLoaded', () =>{
+            document.forms[0].addEventListener('submit', evt => {
                 evt.preventDefault();
 
                 prompt('Строка для копирования:', toYouTubeCutURL(

@@ -21,6 +21,8 @@
     "require": "^2.4.20"
   },
   "devDependencies": {
-    "jasmine": "^2.5.3"
+    "babel-preset-env": "^1.4.0",
+    "jasmine": "^2.5.3",
+    "karma-jasmine": "^1.1.0"
   }
 }
