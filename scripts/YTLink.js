@@ -12,7 +12,7 @@ const YTTime = (SECONDS => class {
         minutes = parseInt(minutes) || 0;
         hours = parseInt(hours) || 0;
 
-        this[SECONDS] = seconds + 60 * (minutes + 60 * hours);
+        /** @type number */ this[SECONDS] = seconds + 60 * (minutes + 60 * hours);
     }
 
     /**
@@ -72,11 +72,11 @@ const [YTLink, YTEmbedLink] = ((ID, START_TIME) => {
     class YTLink {
         /**
          * @param {string} id
-         * @param {YTTime} yTTime
+         * @param {YTTime} startTime
          */
-        constructor(id, yTTime) {
-            this[ID] = id;
-            this[START_TIME] = yTTime;
+        constructor(id, startTime) {
+            /** @type string */ this[ID] = id;
+            /** @type YTTime */ this[START_TIME] = startTime;
         }
 
         /**
@@ -108,8 +108,8 @@ const [YTLink, YTEmbedLink] = ((ID, START_TIME) => {
          */
         constructor(id, startTime, endTime, autoPlay = true) {
             super(id, startTime);
-            this[END_TIME] = endTime;
-            this[AUTO_PLAY] = autoPlay;
+            /** @type YTTime */ this[END_TIME] = endTime;
+            /** @type boolean */ this[AUTO_PLAY] = autoPlay;
         }
 
         /**
