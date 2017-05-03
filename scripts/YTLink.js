@@ -119,13 +119,9 @@ const [YTLink, YTEmbedLink] = ((ID, START_TIME, END_TIME, AUTO_PLAY) => {
          * @returns {YTEmbedLink}
          */
         static parseForm({youTubeUrl: {value: youTubeUrl}, endTime: {value: endTime}}) {
-
-            return Object.assign(this.parse(youTubeUrl), {
-                [END_TIME]: YTTime.parseForm(endTime)
-            });
-
-            //noinspection JSValidateTypes
-            // return Object.defineProperty(this.parse(youTubeUrl), END_TIME, { value: YTTime.parseForm(endTime)});
+            return Object.assign(
+                this.parse(youTubeUrl),
+                {[END_TIME]: YTTime.parseForm(endTime)});
         }
     }
 
