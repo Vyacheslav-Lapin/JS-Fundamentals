@@ -6,7 +6,7 @@ const YTTime = ((HOURS, MINUTES, SECONDS) => class {
      * @param {string} [minutes=0]
      * @param {string} [seconds=0]
      */
-    constructor(hours = '', minutes = '', seconds = '') {
+    constructor([seconds = '', minutes = '', hours = '']) {
         this[HOURS] = parseInt(hours) || 0;
         this[MINUTES] = parseInt(minutes) || 0;
         this[SECONDS] = parseInt(seconds) || 0;
@@ -35,8 +35,7 @@ const YTTime = ((HOURS, MINUTES, SECONDS) => class {
      * @returns {YTTime}
      */
     static parse(youTubeUrl) {
-        const [, hours, minutes, seconds] = this.regExp.exec(youTubeUrl);
-        return new this(hours, minutes, seconds);
+        return new this(this.regExp.exec(youTubeUrl).reverse());
     }
 
     /**
@@ -44,15 +43,15 @@ const YTTime = ((HOURS, MINUTES, SECONDS) => class {
      * @returns {YTTime}
      */
     static parseForm(time) {
-        const [seconds = '', minutes = '', hours = ''] = time.split(':').reverse();
-        return new this(hours, minutes, seconds);
+        return new this(time.split(':').reverse());
     }
+
 })(Symbol('hours'), Symbol('minutes'), Symbol('seconds'));
 
 Object.defineProperty(YTTime, 'regExp', {value: /([0-2]?\dh)?([0-5]?\dm)?([0-5]?\ds)?/i});
 
-console.log(new YTTime(1, 2, 3).toString() === '1h2m3s');
-console.log(new YTTime(1, 2, 3).toSeconds() === 3723);
+console.log(new YTTime([3, 2, 1]).toString() === '1h2m3s');
+console.log(new YTTime([3, 2, 1]).toSeconds() === 3723);
 console.log((YTTime.parse('1h2m3s').toString() === '1h2m3s'));
 console.log((YTTime.parseForm('1:2:3').toString() === '1h2m3s'));
 console.log((YTTime.parseForm('2:3').toString() === '2m3s'));
