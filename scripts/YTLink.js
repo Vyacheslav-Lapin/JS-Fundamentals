@@ -67,7 +67,7 @@ console.log((YTTime.parseForm('2:3').toString() === '2m3s'));
 console.log((YTTime.parseForm('3').toString() === '3s'));
 
 
-const [YTLink, YTEmbedLink] = ((ID, START_TIME, END_TIME, AUTO_PLAY) => {
+const [YTLink, YTEmbedLink] = ((ID, START_TIME) => {
 
     class YTLink {
         /**
@@ -99,7 +99,7 @@ const [YTLink, YTEmbedLink] = ((ID, START_TIME, END_TIME, AUTO_PLAY) => {
         }
     }
 
-    class YTEmbedLink extends YTLink {
+    const YTEmbedLink = ((END_TIME, AUTO_PLAY) => class extends YTLink {
         /**
          * @param {string} id
          * @param {YTTime} startTime
@@ -133,11 +133,11 @@ const [YTLink, YTEmbedLink] = ((ID, START_TIME, END_TIME, AUTO_PLAY) => {
                 this.parse(youTubeUrl),
                 {[END_TIME]: YTTime.parseForm(endTime)});
         }
-    }
+    })(Symbol('endTime'), Symbol('autoPlay'));
 
     return [YTLink, YTEmbedLink];
 
-})(Symbol('id'), Symbol('startTime'), Symbol('endTime'), Symbol('autoPlay'));
+})(Symbol('id'), Symbol('startTime'));
 
 console.log(new YTLink('khafgfdagrr', YTTime.parse('1h2m3s')).toString() ===
     'https://youtu.be/khafgfdagrr?t=1h2m3s');
