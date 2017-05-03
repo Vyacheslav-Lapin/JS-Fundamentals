@@ -2,14 +2,14 @@
 
 const YTTime = ((HOURS, MINUTES, SECONDS) => class {
     /**
-     * @param {number} [hours=0]
-     * @param {number} [minutes=0]
-     * @param {number} [seconds=0]
+     * @param {string} [hours=0]
+     * @param {string} [minutes=0]
+     * @param {string} [seconds=0]
      */
-    constructor(hours = 0, minutes = 0, seconds = 0) {
-        this[HOURS] = hours;
-        this[MINUTES] = minutes;
-        this[SECONDS] = seconds;
+    constructor(hours = '', minutes = '', seconds = '') {
+        this[HOURS] = parseInt(hours) || 0;
+        this[MINUTES] = parseInt(minutes) || 0;
+        this[SECONDS] = parseInt(seconds) || 0;
     }
 
     /**
@@ -36,7 +36,7 @@ const YTTime = ((HOURS, MINUTES, SECONDS) => class {
      */
     static parse(youTubeUrl) {
         const [, hours, minutes, seconds] = this.regExp.exec(youTubeUrl);
-        return new this(parseInt(hours), parseInt(minutes), parseInt(seconds));
+        return new this(hours, minutes, seconds);
     }
 
     /**
@@ -45,7 +45,7 @@ const YTTime = ((HOURS, MINUTES, SECONDS) => class {
      */
     static parseForm(time) {
         const [seconds = '', minutes = '', hours = ''] = time.split(':').reverse();
-        return new this(parseInt(hours), parseInt(minutes), parseInt(seconds));
+        return new this(hours, minutes, seconds);
     }
 })(Symbol('hours'), Symbol('minutes'), Symbol('seconds'));
 
