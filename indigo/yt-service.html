@@ -3,19 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>YouTUBE-service</title>
-    <script src="/scripts/YouTubeLink.js"></script>
+    <script src="/scripts/YTLink.js"></script>
     <script>
         // https://www.youtube.com/embed/k0jC50TcdR0?start=302&end=305&autoplay=1
         // https://youtu.be/k0jC50TcdR0?t=1h5m2s
         addEventListener('DOMContentLoaded', () =>
             document.forms[0].addEventListener('submit', evt => {
                 evt.preventDefault();
-                prompt('Скопируйте текст, нажав Ctrl+C', parseForm(evt.target));
-
-                function parseForm({youTubeUrl: {value: youTubeUrl}, endTime: {value: endTime}}) {
-                    return YouTubeEmbedLink.parseShort(youTubeUrl, endTime);
-                }
-            }));
+                prompt('Скопируйте текст, нажав Ctrl+C', YTEmbedLink.parseForm(evt.target).toString());
+            })
+        );
     </script>
 
 </head>
