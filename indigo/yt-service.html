@@ -10,7 +10,8 @@
         addEventListener('DOMContentLoaded', () =>
             document.forms[0].addEventListener('submit', evt => {
                 evt.preventDefault();
-                prompt('Скопируйте текст, нажав Ctrl+C', YTEmbedLink.parseForm(evt.target).toString());
+                const {youTubeUrl: {value: youTubeUrl}, endTime: {value: endTime}} = evt.target;
+                prompt('Скопируйте текст, нажав Ctrl+C', YTEmbedLink.parseForm(youTubeUrl, endTime).toString());
             })
         );
     </script>
@@ -20,7 +21,7 @@
 
 <form>
     <input name="youTubeUrl" placeholder="YouTUBE URL" autofocus="autofocus" size="40"/><br/>
-    <input name="endTime" placeholder="end time in hh:mm:ss format" pattern="(\d:)?([0-5]+:)?[0-5]\d"/><br/>
+    <input name="endTime" placeholder="end time in hh:mm:ss format" pattern="([0-2]?\d:)?([0-5]?\d:)?[0-5]?\d"/><br/>
 
     <input type="submit"/>
 </form>

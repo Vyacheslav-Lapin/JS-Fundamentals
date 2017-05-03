@@ -128,7 +128,7 @@ const [YTLink, YTEmbedLink] = ((ID, START_TIME) => {
          * @param {string} endTime
          * @returns {YTEmbedLink}
          */
-        static parseForm({youTubeUrl: {value: youTubeUrl}, endTime: {value: endTime}}) {
+        static parseForm(youTubeUrl, endTime) {
             return Object.assign(
                 this.parse(youTubeUrl),
                 {[END_TIME]: YTTime.parseForm(endTime)});
@@ -151,7 +151,5 @@ console.log(new YTEmbedLink('dfsfsf', new YTTime([3, 2, 1]), new YTTime([4, 2, 1
 console.log(new YTEmbedLink('khafgfdag', YTTime.parse('1h2m3s'), YTTime.parse('1h2m4s')).toString() ===
     'https://www.youtube.com/embed/khafgfdag?start=3723&end=3724&autoplay=1');
 
-console.log(YTEmbedLink.parseForm({
-        youTubeUrl: {value: 'https://youtu.be/khafgfdag?t=1h2m3s'},
-        endTime: {value: '1:2:4'}
-    }).toString() === 'https://www.youtube.com/embed/khafgfdag?start=3723&end=3724&autoplay=1');
+console.log(YTEmbedLink.parseForm('https://youtu.be/khafgfdag?t=1h2m3s', '1:2:4').toString() ===
+    'https://www.youtube.com/embed/khafgfdag?start=3723&end=3724&autoplay=1');
