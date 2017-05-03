@@ -5,13 +5,13 @@
     <title>YouTUBE-service</title>
     <script src="/scripts/YTLink.js"></script>
     <script>
-        // https://www.youtube.com/embed/k0jC50TcdR0?start=302&end=305&autoplay=1
-        // https://youtu.be/k0jC50TcdR0?t=1h5m2s
         addEventListener('DOMContentLoaded', () =>
             document.forms[0].addEventListener('submit', evt => {
                 evt.preventDefault();
                 const {youTubeUrl: {value: youTubeUrl}, endTime: {value: endTime}} = evt.target;
-                prompt('Скопируйте текст, нажав Ctrl+C', YTEmbedLink.parseForm(youTubeUrl, endTime).toString());
+
+                //noinspection JSUnresolvedFunction
+                prompt('Скопируйте текст, нажав Ctrl+C', YTEmbedLink.parseForm(youTubeUrl, endTime));
             })
         );
     </script>
