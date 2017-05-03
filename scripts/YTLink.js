@@ -32,6 +32,7 @@ const YTTime = ((HOURS, MINUTES, SECONDS) => class {
 
     /**
      * @param {string} youTubeUrl
+     * @returns {YTTime}
      */
     static parse(youTubeUrl) {
         const [, hours, minutes, seconds] = this.regExp.exec(youTubeUrl);
@@ -40,6 +41,7 @@ const YTTime = ((HOURS, MINUTES, SECONDS) => class {
 
     /**
      * @param {string} time
+     * @returns {YTTime}
      */
     static parseForm(time) {
         const [seconds = '', minutes = '', hours = ''] = time.split(':').reverse();
@@ -78,6 +80,7 @@ const [YTLink, YTEmbedLink] = ((ID, START_TIME, END_TIME, AUTO_PLAY) => {
 
         /**
          * @param {string} youTubeUrl
+         * @returns {YTLink}
          */
         static parse(youTubeUrl) {
             const endOfId = youTubeUrl.indexOf('?');
