@@ -105,7 +105,10 @@ const [YTLink, YTEmbedLink] = ((ID, START_TIME, END_TIME, AUTO_PLAY) => {
          * @returns {string}
          */
         toString() {
-            return `https://www.youtube.com/embed/${this[ID]}?start=${this[START_TIME].toSeconds()}&end=${this[END_TIME].toSeconds()}&autoplay=${this[AUTO_PLAY] ? 1: 0}`;
+            const start = this[START_TIME].toSeconds();
+            const end = this[END_TIME].toSeconds();
+            const autoPlay = this[AUTO_PLAY] ? 1: 0;
+            return `https://www.youtube.com/embed/${this[ID]}?start=${start}&end=${end}&autoplay=${autoPlay}`;
         }
 
         /**
