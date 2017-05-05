@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <title>YouTUBE-service</title>
     <script src="/scripts/YTLink.js"></script>
+    <script src="/test/YTLinkSpec.js"></script>
     <script>
+        'use strict';
         addEventListener('DOMContentLoaded', () =>
             document.forms[0].addEventListener('submit', evt => {
                 evt.preventDefault();
@@ -20,10 +22,10 @@
 <body>
 
 <form>
-    <input name="youTubeUrl" placeholder="YouTUBE URL" autofocus="autofocus" size="40"/><br/>
-    <input name="endTime" placeholder="end time in hh:mm:ss format" pattern="([0-2]?\d:)?([0-5]?\d:)?[0-5]?\d"/><br/>
+    <input name="youTubeUrl" placeholder="YouTUBE URL" autofocus size="40"><br>
+    <input name="endTime" placeholder="end time in hh:mm:ss format" pattern="([0-2]?\d:)?([0-5]?\d:)?[0-5]?\d"><br>
 
-    <input type="submit"/>
+    <input type="submit">
 </form>
 
 </body>
