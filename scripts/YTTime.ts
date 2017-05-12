@@ -13,7 +13,7 @@ export class YTTime {
     private seconds: number;
 
     // noinspection JSUnusedLocalSymbols
-    private constructor([secondsString = "", minutesString = "", hoursString = ""]) {
+    public constructor([secondsString = "", minutesString = "", hoursString = ""]) {
         const seconds = parseInt(secondsString) || 0;
         const minutes = parseInt(minutesString) || 0;
         const hours = parseInt(hoursString) || 0;

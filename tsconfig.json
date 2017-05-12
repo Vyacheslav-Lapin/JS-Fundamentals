@@ -9,6 +9,10 @@
     "experimentalDecorators": true
   },
   "files": [
-    "greeter.ts"
+    "scripts/YTTime.ts",
+    "scripts/YTLink.ts",
+    "scripts/YTEmbedLink.ts",
+    "scripts/init.ts",
+    "test/YTEmbedLinkSpec.ts"
   ]
 }
