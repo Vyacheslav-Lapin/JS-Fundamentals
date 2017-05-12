@@ -3,21 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>YouTUBE-service</title>
-    <script src="/scripts/YTLink.ts"></script>
-    <script src="/test/YTLinkSpec.js"></script>
-    <script>
-        'use strict';
-        addEventListener('DOMContentLoaded', () =>
-            document.forms[0].addEventListener('submit', evt => {
-                evt.preventDefault();
-                const {youTubeUrl: {value: youTubeUrl}, endTime: {value: endTime}} = evt.target;
-
-                //noinspection JSUnresolvedFunction
-                prompt('Скопируйте текст, нажав Ctrl+C', YTEmbedLink.parseForm(youTubeUrl, endTime));
-            })
-        );
-    </script>
-
+    <!--<script src="/build.js"></script>-->
+    <!--<script src="/scripts/YTTime.js"></script>-->
+    <!--<script src="/scripts/YTLink.js"></script>-->
+    <!--<script src="/scripts/YTEmbedLink.js"></script>-->
+    <!--<script src="/test/YTLinkSpec.js"></script>-->
+    <!--<script src="/scripts/init.js"></script>-->
 </head>
 <body>
 
@@ -28,5 +19,15 @@
     <input type="submit">
 </form>
 
+
+<script>
+    console.log(document.forms[0].getElementsByTagName("input").length);
+
+    console.log(window === this); // true
+    document.forms[0].onsubmit = function a() {
+        console.log("123");
+        return false;
+    }
+</script>
 </body>
 </html>
