@@ -1,6 +1,6 @@
-import {YTEmbedLink} from "../scripts/YTEmbedLink";
-import {YTLink} from "../scripts/YTLink";
-import {YTTime} from "../scripts/YTTime";
+import {YTEmbedLink} from "../_scripts/YTEmbedLink";
+import {YTLink} from "../_scripts/YTLink";
+import {YTTime} from "../_scripts/YTTime";
 
 console.log(new YTTime(["3s", "2m", "1h"]).toString() === "1h2m3s");
 console.log(new YTTime(["3s", "2m", NaN.toString()]).toString() === "2m3s");

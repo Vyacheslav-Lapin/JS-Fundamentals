@@ -1,6 +1,9 @@
+// noinspection SpellCheckingInspection
 module.exports = {
-    entry: "./scripts/init.js",
+    entry: "./_scripts/init.js",
     output: {
         filename:"build.js"
-    }
+    },
+    watch: true,
+    devtool: "source-map"
 };

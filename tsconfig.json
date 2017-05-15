@@ -8,11 +8,18 @@
     "target": "ES2015",
     "experimentalDecorators": true
   },
-  "files": [
-    "scripts/YTTime.ts",
-    "scripts/YTLink.ts",
-    "scripts/YTEmbedLink.ts",
-    "scripts/init.ts",
-    "test/YTEmbedLinkSpec.ts"
+//  "files": [
+//    "_scripts/YTTime.ts",
+//    "_scripts/YTLink.ts",
+//    "_scripts/YTEmbedLink.ts",
+//    "_scripts/init.ts",
+//    "_test/YTEmbedLinkSpec.ts"
+//  ],
+  "include": [
+    "_scripts/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*Spec.ts"
   ]
 }

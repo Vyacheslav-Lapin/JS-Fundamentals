@@ -1,7 +1,7 @@
-import {YTLink} from "./YTLink";
-import {YTTime} from "./YTTime";
+import YTLink from "./YTLink";
+import YTTime from "./YTTime";
 
-export class YTEmbedLink extends YTLink {
+export default class YTEmbedLink extends YTLink {
 
     public static parseForm(youTubeUrl: string, endTime: string): YTEmbedLink {
         return Object.assign(

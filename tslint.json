@@ -19,7 +19,8 @@
       ]
     },
     "radix": false,
-    "interface-name": false
+    "interface-name": false,
+    "arrow-parens": false
   },
   "jsRules": {
     "max-line-length": {

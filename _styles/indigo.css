@@ -1,9 +1,9 @@
-@import "/styles/top.css";
-@import "/styles/nav.css";
-@import "/styles/toolbox.css";
-@import "/styles/tabs.css";
-@import "/styles/content.css";
-@import "/styles/template.css";
+@import "/_styles/top.css";
+@import "/_styles/nav.css";
+@import "/_styles/toolbox.css";
+@import "/_styles/tabs.css";
+@import "/_styles/content.css";
+@import "/_styles/template.css";
 
 :root {
     --search-placeholder-color: #5c6bc0;

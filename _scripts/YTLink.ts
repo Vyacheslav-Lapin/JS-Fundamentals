@@ -1,6 +1,6 @@
-import {YTTime} from "./YTTime";
+import YTTime from "./YTTime";
 
-export class YTLink {
+export default class YTLink {
 
     // noinspection ReservedWordAsName
     public static parse<Y extends YTLink>(this: new (s: string, t: YTTime) => Y, youTubeUrl: string): Y {

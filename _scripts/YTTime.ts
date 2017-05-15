@@ -1,4 +1,4 @@
-export class YTTime {
+export default class YTTime {
 
     public static parse(youTubeUrl: string): YTTime {
         return new this(this.regExp.exec(youTubeUrl).reverse() as [string, string, string]);
