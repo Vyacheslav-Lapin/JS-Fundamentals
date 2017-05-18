@@ -1,6 +1,6 @@
 // noinspection SpellCheckingInspection,JSUnresolvedVariable
 module.exports = {
-    entry: ["./_scripts/init.js", "./_test/YTEmbedLinkSpec.js"],
+    entry: "./_scripts/yt.js",
     output: {
         filename:"build.js"
     },

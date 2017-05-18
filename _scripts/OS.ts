@@ -1,4 +1,9 @@
+import lazy from "./decorators/lazy";
+
 enum OsType { MacOS, Linux, iOS, Android, Windows, Unknown }
+
+if (!("navigator" in this))
+    this.navigator = {platform: "Macintosh", userAgent: ""};
 
 export default class OS {
 
@@ -10,19 +15,19 @@ export default class OS {
         return `${this.os.type === OsType.MacOS ? "Cmd" : "Ctrl"}+C`;
     }
 
-    @lazy(() => new OS())
+    @lazy(() => new OS(this.navigator))
     private static os: OS;
 
     private type: OsType;
 
-    public constructor() {
-        const platform = navigator.platform;
+    public constructor(navigator: Navigator) {
+        const {platform, userAgent} = navigator;
 
         this.type =
             ["Macintosh", "MacIntel", "MacPPC", "Mac68K"].indexOf(platform) !== -1 ? OsType.MacOS :
                 ["iPhone", "iPad", "iPod"].indexOf(platform) !== -1 ? OsType.iOS :
                     ["Win32", "Win64", "Windows", "WinCE"].indexOf(platform) !== -1 ? OsType.Windows :
-                        /Android/.test(navigator.userAgent) ? OsType.Android :
+                        /Android/.test(userAgent) ? OsType.Android :
                             /Linux/.test(platform) ? OsType.Linux :
                                 OsType.Unknown;
     }
@@ -31,16 +36,4 @@ export default class OS {
     public toString() {
         return OsType[this.type];
     }
-}
-
-function lazy<T>(factory: () => T, writable = false) {
-    return (o: any, propertyKey: string | symbol) => Object.defineProperty(o, propertyKey, {
-        configurable: true,
-        get() {
-            return Object.defineProperty(o, propertyKey, {
-                writable,
-                value: factory(),
-            })[propertyKey];
-        },
-    });
 }

@@ -12,7 +12,7 @@
 //    "_scripts/YTTime.ts",
 //    "_scripts/YTLink.ts",
 //    "_scripts/YTEmbedLink.ts",
-//    "_scripts/init.ts",
+//    "_scripts/yt.ts",
 //    "_test/YTEmbedLinkSpec.ts"
 //  ],
   "include": [

@@ -5,6 +5,7 @@
   ],
   "helpers": [
     "../node_modules/jasmine-es6/lib/install.js",
+    "../node_modules/jasmine-dom/lib/install.js",
     "helpers/**/*.js"
   ],
   "stopSpecOnExpectationFailure": false,

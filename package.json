@@ -17,14 +17,14 @@
   },
   "homepage": "https://github.com/Vyacheslav-Lapin/JS-Fundamentals#readme",
   "dependencies": {
-    "jquery": "^3.1.1",
+    "jquery": "^3.2.1",
     "require": "^2.4.20"
   },
   "devDependencies": {
     "@types/jasmine": "^2.5.47",
     "babel-preset-env": "^1.4.0",
     "jasmine": "^2.6.0",
-    "jasmine-core": "^2.6.1",
+    "jasmine-core": "^2.6.2",
     "jasmine-es6": "^0.4.0",
     "jasmine-ts": "^0.1.2",
     "karma-jasmine": "^1.1.0"
