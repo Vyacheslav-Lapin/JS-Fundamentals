@@ -13,3 +13,5 @@ export default function lazy<T>(factory: () => T,
         },
     });
 }
+
+const y = () => ({x: 5});

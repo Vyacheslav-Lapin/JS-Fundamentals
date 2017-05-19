@@ -1,5 +1,7 @@
 {
   "globalDependencies": {
-    "jasmine": "registry:dt/jasmine#2.5.2+20170317130948"
+    "jasmine": "registry:dt/jasmine#2.5.2+20170317130948",
+    "karma": "registry:dt/karma#0.13.9+20160811111312",
+    "node": "registry:dt/node#7.0.0+20170322231424"
   }
 }

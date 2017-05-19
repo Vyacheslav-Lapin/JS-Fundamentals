@@ -2,9 +2,6 @@ import lazy from "./decorators/lazy";
 
 enum OsType { MacOS, Linux, iOS, Android, Windows, Unknown }
 
-if (!("navigator" in this))
-    this.navigator = {platform: "Macintosh", userAgent: ""};
-
 export default class OS {
 
     public static get title(): string {
@@ -15,7 +12,7 @@ export default class OS {
         return `${this.os.type === OsType.MacOS ? "Cmd" : "Ctrl"}+C`;
     }
 
-    @lazy(() => new OS(this.navigator))
+    @lazy(() => new OS(navigator))
     private static os: OS;
 
     private type: OsType;

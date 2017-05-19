@@ -8,13 +8,6 @@
     "target": "ES2015",
     "experimentalDecorators": true
   },
-//  "files": [
-//    "_scripts/YTTime.ts",
-//    "_scripts/YTLink.ts",
-//    "_scripts/YTEmbedLink.ts",
-//    "_scripts/yt.ts",
-//    "_test/YTEmbedLinkSpec.ts"
-//  ],
   "include": [
     "_scripts/**/*"
   ],
